@@ -27,6 +27,7 @@ class database :
             CREATE TABLE IF NOT EXISTS article(
             id INTEGER PRIMARY KEY AUTOINCREMENT UNIQUE,
             article TEXT,
+            titre TEXT,
             id_journal INTERGER
             )
         """)
@@ -59,7 +60,16 @@ class database :
 
         self.conn.commit()
 
-        self.conn.close()
+        
+
+    def articles(self):
+
+        cursor = self.conn.cursor()
+
+        cursor.execute("""SELECT article , id_journal FROM article""")
+        rows = cursor.fetchall()
+        for row in rows:
+            print('{0} , {1}'.format(row[0], row[1]))
         
 
 

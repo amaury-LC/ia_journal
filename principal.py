@@ -12,3 +12,7 @@ ma_base_de_donnee.create_table()
 tuple_article = [("ceci est un teste", 1)]
 ma_base_de_donnee.insert_article(tuple_article)
 
+
+# lire mes articles
+ma_base_de_donnee.articles()
+
