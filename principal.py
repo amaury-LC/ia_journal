@@ -9,6 +9,6 @@ ma_base_de_donnee.create_table()
 
 
 # insert mes articles
-tuple_article = [("ceci est un teste", 1)]
+tuple_article = [("ceci est un test", 1)]
 ma_base_de_donnee.insert_article(tuple_article)
 
