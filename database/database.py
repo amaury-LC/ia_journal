@@ -57,6 +57,8 @@ class database :
         cursor.executemany("""
             INSERT INTO article(article, id_journal) VALUES(?, ?)""", articles)
 
+        self.conn.commit()
+
         self.conn.close()
         
 
