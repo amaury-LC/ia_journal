@@ -6,9 +6,19 @@ class database :
 
     def create_database(self,name_database):
 
+        """
+        create ma database
+        
+        """
+
         self.conn = sqlite3.connect(name_database + '.db')
 
     def create_table(self):
+
+        """
+        create table
+        
+        """
 
         cursor = self.conn.cursor()
 
@@ -31,8 +41,28 @@ class database :
         """)
         self.conn.commit()
 
+     
+
+    def insert_article(self,articles):
+
+        """
+        insert dans la table article
+        entrée:
+        article :  
+            tuple (article,id)
+        """
+
+        cursor = self.conn.cursor()
+
+        cursor.executemany("""
+            INSERT INTO article(article, id_journal) VALUES(?, ?)""", articles)
+
         self.conn.close()
-
-    def insert_table()
-
         
+
+
+
+
+       
+
+
